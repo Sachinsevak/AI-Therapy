@@ -1,0 +1,13 @@
+from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
+db = client.ai_therapy_app
+
+# Collections
+mood_collection = db.mood
+sleep_collection = db.sleep
+meditation_collection = db.meditation
